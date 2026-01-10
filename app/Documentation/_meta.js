@@ -5,8 +5,8 @@ export default {
       copyPage: false
     }
   },
-  Started: {
-    title: 'Get Started',
+  Installation: {
+    title: 'Installation',
     theme: {
       copyPage: false
     }

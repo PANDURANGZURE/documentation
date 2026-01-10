@@ -1,1 +1,75 @@
-#Project structure
+import { FileTree } from 'nextra/components'
+
+# Project Structure
+
+Our library is built on a **Modular File Architecture**. Each component is self-contained within its own directory, making it easy to manage, test, and—most importantly—copy into your own project if you prefer manual installation.
+
+---
+
+## Internal Library Structure
+If you are contributing to the library or exploring the source code, this is how the core is organized:
+
+<FileTree>
+  <FileTree.Folder name="my-ui-library" defaultOpen>
+    <FileTree.Folder name="packages" defaultOpen>
+      <FileTree.Folder name="ui" defaultOpen>
+        <FileTree.Folder name="src" defaultOpen>
+          <FileTree.Folder name="components" defaultOpen>
+            <FileTree.Folder name="Button" defaultOpen>
+              <FileTree.File name="Button.jsx" />
+              <FileTree.File name="Button.css" />
+              <FileTree.File name="index.js" />
+            </FileTree.Folder>
+            <FileTree.Folder name="Input">
+              <FileTree.File name="Input.jsx" />
+              <FileTree.File name="Input.css" />
+              <FileTree.File name="index.js" />
+            </FileTree.Folder>
+          </FileTree.Folder>
+          <FileTree.File name="index.js" />
+        </FileTree.Folder>
+        <FileTree.File name="package.json" />
+      </FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.File name="README.md" />
+  </FileTree.Folder>
+</FileTree>
+
+---
+
+## Manual Integration Structure
+For users who do not wish to use `npm install`, you should replicate the following structure within your project's `components` or `ui` folder:
+
+### Component Folder Pattern
+Every component you "pluck" from this library requires three specific files to function correctly:
+
+1. **`ComponentName.jsx`** The core React logic and markup.
+2. **`ComponentName.css`** The isolated styles specific to that component.
+3. **`index.js`** The public-facing export that allows for clean imports.
+
+### Example Implementation
+If you were adding the **Button** component to your local project, your file tree should look like this:
+
+<FileTree>
+  <FileTree.Folder name="src" defaultOpen>
+    <FileTree.Folder name="components" defaultOpen>
+      <FileTree.Folder name="Button" defaultOpen>
+        <FileTree.File name="Button.jsx" />
+        <FileTree.File name="Button.css" />
+        <FileTree.File name="index.js" />
+      </FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.File name="App.js" />
+  </FileTree.Folder>
+</FileTree>
+
+> **Note:** By following this structure, your import statements will remain clean:  
+> `import { Button } from './components/Button';`
+
+---
+
+## Why this structure?
+
+* **Zero Side Effects:** Styles are kept in `.css` files specific to the component, preventing global CSS pollution.
+* **Portability:** Because the `index.js` handles the export, you can move the entire folder anywhere in your project without breaking the internal logic.
+* **Ease of Ownership:** If you copy these files, you can modify the CSS or JS directly to fit your brand without needing to wrap or override library components.
