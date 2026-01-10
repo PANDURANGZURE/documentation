@@ -9,25 +9,30 @@ Follow these steps to integrate the UI library into your project. Choose the met
   
     ## NPM (Package Manager)
     <Steps>
-      ### Step 1: Install the Package
+      ### Step 1: Create a React App
+      Open your terminal and run the following command to create a new React app:
+      ```bash
+      npx create-react-app my-app
+      ``` 
+      ### Step 2: Navigate to Your Project Directory
+      After creating your project, navigate to your project directory:
+      ```bash
+      cd my-app
+      ``` 
+
+      ### Step 3: Install the Package
       Run the following command in your project root to add the library as a dependency.
       ```bash
-      npm install your-ui-library
+      npm install zure-ui
       ```
 
-      ### Step 2: Import Global Styles (Optional)
-      If your library uses a global CSS reset or variables, import it at the top of your `main.js` or `_app.js`.
-      ```javascript
-      import 'your-ui-library/dist/style.css';
-      ```
-
-      ### Step 3: Start Building
+      ### Step 4: Start Building
       You can now import any component directly into your React files.
       ```jsx
-      import { Button } from 'your-ui-library';
+      import { Button } from 'zure-ui';
 
       function App() {
-        return <Button>Hello World</Button>;
+        return <Button>Hello From Saurav Zure</Button>;
       }
       ```
     </Steps>
@@ -52,7 +57,7 @@ Follow these steps to integrate the UI library into your project. Choose the met
       ### Step 3: Add the Three Core Files
       Inside that new folder, create these three files and paste the code provided in the component's documentation:
       1.  `Button.jsx` (The Logic)
-      2.  `Button.css` (The Styles)
+      2.  `button.module.css` (The Styles)
       3.  `index.js` (The Export)
 
       ### Step 4: Configure the Export

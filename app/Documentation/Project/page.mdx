@@ -17,7 +17,7 @@ If you are contributing to the library or exploring the source code, this is how
           <FileTree.Folder name="components" defaultOpen>
             <FileTree.Folder name="Button" defaultOpen>
               <FileTree.File name="Button.jsx" />
-              <FileTree.File name="Button.css" />
+              <FileTree.File name="button.module.css" />
               <FileTree.File name="index.js" />
             </FileTree.Folder>
             <FileTree.Folder name="Input">
@@ -44,7 +44,7 @@ For users who do not wish to use `npm install`, you should replicate the followi
 Every component you "pluck" from this library requires three specific files to function correctly:
 
 1. **`ComponentName.jsx`** The core React logic and markup.
-2. **`ComponentName.css`** The isolated styles specific to that component.
+2. **`ComponentName.module.css`** The isolated styles specific to that component.
 3. **`index.js`** The public-facing export that allows for clean imports.
 
 ### Example Implementation
@@ -55,7 +55,7 @@ If you were adding the **Button** component to your local project, your file tre
     <FileTree.Folder name="components" defaultOpen>
       <FileTree.Folder name="Button" defaultOpen>
         <FileTree.File name="Button.jsx" />
-        <FileTree.File name="Button.css" />
+        <FileTree.File name="button.module.css" />
         <FileTree.File name="index.js" />
       </FileTree.Folder>
     </FileTree.Folder>

@@ -1,83 +1,19 @@
-import { Steps, Tabs, FileTree } from 'nextra/components'
+import { Cards } from 'nextra/components'
 
-# Installation Guide
+## Real-world Examples
+Discover how developers are using Zure UI to build faster.
 
-Follow these steps to integrate the UI library into your project. Choose the method that best fits your workflow.
-
-<div >
-<Tabs items={['Method 1: NPM (Package Manager)', 'Method 2: Manual (Copy-Paste)']}>
-  
-  {/* NPM METHOD */}
-  <Tabs.Tab>
-    <Steps>
-      ### Step 1: Install the Package
-      Run the following command in your project root to add the library as a dependency.
-      ```bash
-      npm install your-ui-library
-      ```
-
-      ### Step 2: Import Global Styles (Optional)
-      If your library uses a global CSS reset or variables, import it at the top of your `main.js` or `_app.js`.
-      ```javascript
-      import 'your-ui-library/dist/style.css';
-      ```
-
-      ### Step 3: Start Building
-      You can now import any component directly into your React files.
-      ```jsx
-      import { Button } from 'your-ui-library';
-
-      function App() {
-        return <Button>Hello World</Button>;
-      }
-      ```
-    </Steps>
-  </Tabs.Tab>
-
-  {/* MANUAL METHOD */}
-  <Tabs.Tab>
-    <Steps>
-      ### Step 1: Create a Components Directory
-      Ensure you have a dedicated folder for UI components (e.g., `src/components/ui`).
-
-      ### Step 2: Create the Component Folder
-      For each component you want to use, create a new folder named after the component.
-      <FileTree>
-        <FileTree.Folder name="src" defaultOpen>
-          <FileTree.Folder name="components" defaultOpen>
-            <FileTree.Folder name="Button" defaultOpen />
-          </FileTree.Folder>
-        </FileTree.Folder>
-      </FileTree>
-
-      ### Step 3: Add the Three Core Files
-      Inside that new folder, create these three files and paste the code provided in the component's documentation:
-      1.  `Button.jsx` (The Logic)
-      2.  `Button.css` (The Styles)
-      3.  `index.js` (The Export)
-
-      ### Step 4: Configure the Export
-      Inside your `index.js`, ensure you have the following line so the component is easily accessible:
-      ```javascript
-      export { default as Button } from './Button';
-      ```
-
-      ### Step 5: Local Usage
-      Import the component using your local path:
-      ```jsx
-      import { Button } from './components/Button';
-      ```
-    </Steps>
-  </Tabs.Tab>
-</Tabs>
-</div>
----
-
-## Which method should I choose?
-
-| Feature | NPM Method | Manual Method |
-| :--- | :--- | :--- |
-| **Updates** | `npm update` to get new features. | Manual copy-paste required. |
-| **Customization** | Limited to props/theme variables. | **Full control** over every line of code. |
-| **Bundle Size** | Only what you import (if tree-shaken). | Only the files you physically copy. |
-| **Speed** | Fastest setup. | Takes 1-2 minutes per component. |
+<Cards>
+  <Cards.Card
+    image
+    title="SaaS Dashboard"
+    href="https://example.com"
+    children={<img src="/dashboard-preview.png" alt="Dashboard" />}
+  />
+  <Cards.Card
+    image
+    title="E-commerce Store"
+    href="https://example.com"
+    children={<img src="/store-preview.png" alt="Store" />}
+  />
+</Cards>

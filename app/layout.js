@@ -2,6 +2,7 @@ import { Layout, Navbar, Footer, ThemeSwitch} from 'nextra-theme-docs'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import { Head, Search } from 'nextra/components'
+// import './globals.css'
 
 
 export default async function RootLayout({ children }) {

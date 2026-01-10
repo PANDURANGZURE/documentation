@@ -1,35 +1,65 @@
+import { Cards } from 'nextra/components'
+
 # Introduction
 
-Welcome to **Myth UI**, a legendary UI library designed to streamline your web development process with precision and style!
+Welcome to **YourLib Name**, a modular UI component library designed for developers who want a balance between speed and complete source code control.
 
-Myth UI provides high-quality **JSX** and **CSS Module** code snippets that you can easily integrate, copy-paste, and modify within your own projects.
+Our components are built with **React** and **Plain CSS**, ensuring they are lightweight, accessible, and easy to customize.
 
----
 
-## Why Use Myth UI?
-
-* **No Dependencies**: Myth UI doesn’t require any heavy third-party libraries—just pure React and CSS.
-* **Easy to Use**: Straightforward integration; copy the code and you are ready to go.
-* **Highly Customizable**: Every component is designed to be easily modified to fit your specific brand needs.
-* **Fully Responsive**: All components are mobile-first and tested across all screen sizes.
-* **Comprehensive Sections**: From Hero sections to Footers, get full-page layouts ready for production.
-* **Legendary Design**: Pre-designed components that give your project a polished, professional look instantly.
 
 ---
 
-## Features
+## Why Choose This Library?
 
-* **Modular & Reusable**: Build complex interfaces by combining simple, reusable pieces.
-* **Modern Styling**: Uses CSS Modules to ensure zero style conflicts in your application.
-* **Accessibility First**: Built with ARIA standards to ensure usability for everyone.
-* **Developer-Friendly**: Clear documentation and intuitive patterns for developers of all skill levels.
-* **Lightweight**: Keep your bundle size small by only taking the code you actually need.
+Unlike traditional UI libraries that hide logic inside `node_modules`, we offer two distinct ways to work:
+
+<div className="install-cards">
+<Cards>
+  <Cards.Card 
+    icon={<span className="icon-wrapper">📦</span>} 
+    title="NPM Distribution" 
+    href="/installation#npm"
+  >
+    <p className="card-description">Standard package installation for projects that need quick setup and easy updates.</p>
+  </Cards.Card>
+  
+  <Cards.Card 
+    icon={<span className="icon-wrapper">🛠️</span>} 
+    title="Manual 'Plucking'" 
+    href="/installation#manual"
+  >
+    <p className="card-description">Copy the .jsx and .css files directly into your project. You own the code. No dependencies.</p>
+  </Cards.Card>
+</Cards>
+</div>
+---
+
+## Core Principles
+
+### 1. Zero Side Effects
+Every component is isolated. Importing a `Button` won't bloat your app with styles for a `Table` you aren't using.
+
+### 2. Standard CSS
+We use raw `.css` files. No complex CSS-in-JS libraries or pre-processors required. If you know CSS, you can theme this library in seconds.
+
+### 3. Accessible by Default
+We follow WAI-ARIA patterns to ensure your application is usable by everyone, right out of the box.
 
 ---
 
-## Next Steps
+## Project Philosophy
 
-Ready to build something legendary? 
+> "The best UI library is the one that disappears into your project."
 
-* [**Get Started**](/Started) — Learn how to set up Myth UI in your project.
-* [**Explore Components**](/Doc) — Browse our library of UI sections.
+Most libraries become a burden as your project grows because they are hard to customize. By providing the **Manual Installation** option, we ensure that if you need to change a core behavior, you can just edit the file—no "wrapper" or "hacks" required.
+
+---
+
+## Getting Started
+
+Ready to build? Choose your path:
+
+* **I want to install the package:** [NPM Guide](/installation)
+* **I want to copy the source code:** [Manual Guide](/installation)
+* **Browse the components:** [Component Gallery](/components/button)
