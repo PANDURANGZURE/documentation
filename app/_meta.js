@@ -1,4 +1,4 @@
 export default {
-  Doc:"Documentation",
+  Documentation:"Documentation",
   Components : "Components"
 }
