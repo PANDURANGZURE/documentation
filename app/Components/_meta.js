@@ -47,4 +47,16 @@ export default {
       collapsed: false // Indicates whether the item in sidebar is collapsed by default
     }
   },
+  Navbar:{
+    title : "Navbar",
+    theme: {
+      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+    }
+  },
+  Switch:{
+    title : "Switch",
+    theme: {
+      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+    }
+  },
 }
