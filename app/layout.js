@@ -1,16 +1,16 @@
-import { Layout, Navbar, Footer, ThemeSwitch} from 'nextra-theme-docs'
+import { Layout, Navbar } from 'nextra-theme-docs'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
-import { Head, Search } from 'nextra/components'
-// import './globals.css'
-
+import { Head } from 'nextra/components'
+import './globals.css'
 
 export default async function RootLayout({ children }) {
-  // If your files are in /app/Doc, use getPageMap('/Doc') 
-  // or leave it empty to get everything.
-  const pageMap = await getPageMap() 
+  const pageMap = await getPageMap()
   
-    
+  // Note: In the App Router, the Root Layout wraps everything.
+  // To hide the Navbar on the home page specifically, 
+  // Route Groups (Method 1 below) are the standard Next.js way.
+  
   return (
     <html lang="en" suppressHydrationWarning>
       <Head
@@ -19,21 +19,24 @@ export default async function RootLayout({ children }) {
           saturation: 100,
           lightness: { dark: 80, light: 45 }
         }}
-         backgroundColor={{
-    dark: "#000000",
-    light: "rgb(250,250,250)"}}
+        backgroundColor={{
+          dark: "#000000",
+          light: "rgb(250,250,250)"
+        }}
       />
       <body>
         <Layout
           pageMap={pageMap}
-          navbar={<Navbar
-            logo={<b>Zure UI</b>}
-            projectLink="https://github.com/PANDURANGZURE/">
-            <ThemeSwitch />
-          </Navbar>
-             }
-          
+          navbar={
+            <Navbar
+              logo={<b>Zure UI</b>}
+              projectLink="https://github.com/PANDURANGZURE/"
+            />
+          }
           sidebar={{ defaultMenuCollapseLevel: 1 }}
+          // This prop allows you to set the layout to 'raw' 
+          // globally or manage it via _meta.js
+          
         >
           {children}
         </Layout>
