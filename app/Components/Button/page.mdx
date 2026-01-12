@@ -1,0 +1,53 @@
+import { Button } from '@/Components/ui/Button'
+import { ComponentWrapper } from '@/Components/ComponentWrapper'
+
+## Component Showcase
+
+Below is the full output of the Button component across all variants and sizes.
+
+### 1. Variants
+These define the intent and visual weight of the button.
+
+<ComponentWrapper>
+  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+    <Button variant="primary">Primary</Button>
+    <Button variant="outline">Outline</Button>
+    <Button variant="ghost">Ghost</Button>
+    <Button variant="primary" loading>Loading State</Button>
+    <Button variant="primary" disabled>Disabled</Button>
+  </div>
+</ComponentWrapper>
+
+### 2. Sizes
+Buttons can be scaled to fit different UI densities.
+
+<ComponentWrapper>
+  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+    <Button size="sm">Small</Button>
+    <Button size="md">Medium</Button>
+    <Button size="lg">Large</Button>
+  </div>
+</ComponentWrapper>
+
+### 3. Navigation & Custom Colors
+Testing the `to` prop (Link) and the custom `bg`/`color` overrides.
+
+<ComponentWrapper>
+  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+    <Button to="/guide" variant="outline">Navigate to Guide</Button>
+    <Button bg="#22c55e" color="white">Custom Green</Button>
+    <Button bg="#ef4444" color="white">Custom Red</Button>
+  </div>
+</ComponentWrapper>
+
+---
+
+## Technical Summary of Output
+
+| Feature | CSS Class Applied | Expected Result |
+| :--- | :--- | :--- |
+| **Primary** | `.primary` | Solid black background, white text. |
+| **Outline** | `.outline` | Transparent background, 1px black border. |
+| **Ghost** | `.ghost` | No border/background until hover. |
+| **Loading** | `N/A` | Text changes to "Loading..." and button is disabled. |
+| **Link** | `N/A` | Renders as `<a>` tag with `href` instead of `<button>`. |
