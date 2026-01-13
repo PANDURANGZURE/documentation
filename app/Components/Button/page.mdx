@@ -23,7 +23,7 @@ These define the intent and visual weight of the button.
 </ComponentWrapper>
 </Tabs.Tab>
   <Tabs.Tab>
-  ```jsx copy
+  ``` jsx Copy showLineNumbers filename="Button.jsx" 
     <Button variant="primary">Primary</Button>
     <Button variant="outline">Outline</Button>
     <Button variant="ghost">Ghost</Button>
@@ -48,7 +48,7 @@ Buttons can be scaled to fit different UI densities.
 </ComponentWrapper>
 </Tabs.Tab>
   <Tabs.Tab>
-  ```jsx copy
+  ``` jsx Copy showLineNumbers filename="Button.jsx"
     <Button size="sm">Small</Button>
     <Button size="md">Medium</Button>
     <Button size="lg">Large</Button>
@@ -74,7 +74,7 @@ Testing the `to` prop (Link) and the custom `bg`/`color` overrides.
 </ComponentWrapper>
 </Tabs.Tab>
   <Tabs.Tab>
-  ```jsx copy
+  ``` jsx Copy showLineNumbers filename="Button.jsx"
     <Link to='/guide'><Button variant="outline">Navigate to Guide</Button></Link>
     <Button bg="#22c55e" color="white">Custom Green</Button>
     <Button bg="#ef4444" color="white">Custom Red</Button>
@@ -125,7 +125,7 @@ Testing the `to` prop (Link) and the custom `bg`/`color` overrides.
 
       ### Step 4: Start Building
       You can now import any component directly into your React files.
-      ```jsx
+      ``` jsx Copy showLineNumbers filename="Button.jsx"
       import { Button } from 'zure-ui';
 
       function App() {
@@ -171,7 +171,7 @@ Testing the `to` prop (Link) and the custom `bg`/`color` overrides.
     <Tabs items={['React JS', 'Next JS']}>
 
 <Tabs.Tab>
-```jsx copy 
+``` jsx Copy showLineNumbers filename="Button.jsx" 
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./button.module.css";
@@ -228,7 +228,7 @@ export const Button = ({
 ```
 </Tabs.Tab>
   <Tabs.Tab>
-  ```jsx
+  ``` jsx Copy showLineNumbers filename="Button.jsx"
     "use client"; // Required for Next.js App Router
 
 import React from "react";
@@ -283,7 +283,7 @@ export const Button = ({
 
     ### Step 5: Paste in button.module.css
 
-    ```jsx
+   ``` css Copy showLineNumbers filename="button.module.css"
     /* Base styles - applicable to both <button> and <a> tags */
 .button {
   display: inline-flex;
@@ -361,20 +361,20 @@ export const Button = ({
     ```
     ### Step 6: Paste in index.js
 
-    ```jsx
+    ``` js Copy showLineNumbers filename="index.js"
     export { Button } from "./Button";
 
     ```
 
       ### Step 7: Local Usage
       Import the component using your local path:
-      ```jsx
+      ```jsx Copy showLineNumbers filename="Button.jsx"
       import { Button } from './components/Button';
       ```
   
    ### Step 8:  Usage
       Use the component
-      ```jsx
+      ```jsx showLineNumbers filename="Button.jsx"
       <Button variant="primary">Primary</Button>
   <Button variant="outline">Outline</Button>
   <Button variant="ghost">Ghost</Button>
