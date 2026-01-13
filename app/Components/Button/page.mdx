@@ -60,6 +60,8 @@ Buttons can be scaled to fit different UI densities.
 ### 3. Navigation & Custom Colors
 Testing the `to` prop (Link) and the custom `bg`/`color` overrides.
 
+> Important Note "If you are using `to` in React you need no install `react-router-dom`"
+
 <Tabs items={['Preview', 'Use']}>
 
 <Tabs.Tab>
@@ -73,7 +75,7 @@ Testing the `to` prop (Link) and the custom `bg`/`color` overrides.
 </Tabs.Tab>
   <Tabs.Tab>
   ```jsx copy
-    <Button to="/guide" variant="outline">Navigate to Guide</Button>
+    <Link to='/guide'><Button variant="outline">Navigate to Guide</Button></Link>
     <Button bg="#22c55e" color="white">Custom Green</Button>
     <Button bg="#ef4444" color="white">Custom Red</Button>
     ```
@@ -166,7 +168,67 @@ Testing the `to` prop (Link) and the custom `bg`/`color` overrides.
 
     ### Step 4: Paste in Button.jsx
 
-    ```jsx
+    <Tabs items={['React JS', 'Next JS']}>
+
+<Tabs.Tab>
+```jsx copy 
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./button.module.css";
+
+export const Button = ({
+  children,
+  variant = "primary",
+  size = "md",
+  disabled = false,
+  loading = false,
+  className = "",
+  to,
+  bg,
+  color,
+  style,
+  ...props
+}) => {
+  const isLink = Boolean(to);
+
+  const customStyles = {
+    ...style,
+    backgroundColor: bg,
+    color: color,
+  };
+
+  const combinedClasses = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`;
+
+  // If it's a link → React Router Link, else → button
+  if (isLink) {
+    return (
+      <Link
+        to={to}
+        className={combinedClasses}
+        style={customStyles}
+        {...props}
+      >
+        {loading ? "Loading..." : children}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      className={combinedClasses}
+      disabled={disabled || loading}
+      style={customStyles}
+      {...props}
+    >
+      {loading ? "Loading..." : children}
+    </button>
+  );
+};
+
+```
+</Tabs.Tab>
+  <Tabs.Tab>
+  ```jsx
     "use client"; // Required for Next.js App Router
 
 import React from "react";
@@ -214,6 +276,10 @@ export const Button = ({
   );
 };
     ```
+  </Tabs.Tab>
+  </Tabs>
+
+    
 
     ### Step 5: Paste in button.module.css
 
