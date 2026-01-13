@@ -1,1 +1,441 @@
-#checkbox
+
+import { Checkbox } from '@/Components/ui/Checkbox'
+
+import CheckboxDemo  from '@/Demo/CheckboxDemo'
+import { ComponentWrapper } from '@/Components/ComponentWrapper'
+import { Steps, Tabs, FileTree } from 'nextra/components'
+
+# Checkbox
+
+Below is the full output of the Inpu component across all variants and sizes.
+> "Its Important to install the packages & Dependencies to use can intall using `npm install zure-ui` and also paste code maunally `For both React & Next Js` "
+
+### 1. Variants
+These define the intent and visual weight of the Checkbox.
+
+<Tabs items={['Preview', 'Use']}>
+
+<Tabs.Tab>
+<ComponentWrapper>
+  <div style={{ display: 'flex', gap: '1rem', color: 'black' , alignItems: 'center', flexWrap: 'wrap' }}>
+          <Checkbox defaultChecked variant="default" size="md" label="default" color="#000"  />
+          <Checkbox defaultChecked variant="outline" size="md" label="outline" color="#000" />
+          <Checkbox defaultChecked variant="ghost" size="md" label="ghost" color="#000" />
+  </div>
+</ComponentWrapper>
+</Tabs.Tab>
+  <Tabs.Tab>
+  ``` jsx Copy showLineNumbers filename="Checkbox.jsx" 
+<Checkbox defaultChecked variant="default" size="md" label="default" color="#000"  />
+<Checkbox defaultChecked variant="outline" size="md" label="outline" color="#000" />
+<Checkbox defaultChecked variant="ghost" size="md" label="ghost" color="#000" />
+    ```
+  </Tabs.Tab>
+  </Tabs>
+
+### 2. Sizes
+We have provided 3 sizes `sm` , `md` & `lg`.
+
+<Tabs items={['Preview', 'Use']}>
+
+<Tabs.Tab>
+<ComponentWrapper>
+  <div style={{ display: 'flex', color:'black', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+<Checkbox defaultChecked variant="default" size="sm" label="sm" color="#000"  />
+<Checkbox defaultChecked variant="default" size="md" label="md" color="#000"  />
+<Checkbox defaultChecked variant="default" size="lg" label="lg" color="#000"  />
+  </div>
+</ComponentWrapper>
+</Tabs.Tab>
+  <Tabs.Tab>
+  ``` jsx Copy showLineNumbers filename="Checkbox.jsx"
+<Checkbox defaultChecked variant="default" size="sm" label="sm" color="#000"  />
+<Checkbox defaultChecked variant="default" size="md" label="md" color="#000"  />
+<Checkbox defaultChecked variant="default" size="lg" label="lg" color="#000"  />
+    ```
+  </Tabs.Tab>
+  </Tabs>
+
+
+### 3. Example
+Made an example for `better understanding` which showes ud the state of Checkbox. 
+
+> Important Note : I have used `tailwindcss` you can use normal `CSS` 
+
+  
+<Tabs items={['Preview', 'Use']}>
+
+<Tabs.Tab>
+<ComponentWrapper>
+  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+    <CheckboxDemo/>
+  </div>
+</ComponentWrapper>
+</Tabs.Tab>
+  <Tabs.Tab>
+  ``` jsx Copy showLineNumbers filename="Checkbox.jsx"
+import React, { useState } from "react";
+import { Checkbox } from "@/Components/ui/Checkbox/Checkbox"; 
+
+export default function CheckboxDemo() {
+  const [isChecked, setIsChecked] = useState(false);
+
+  return (
+    <div className="p-10 flex flex-col text-black items-start gap-4 font-sans">
+      <Checkbox
+        label={isChecked ? "Task is completed!" : "Mark as complete"}
+        checked={isChecked}
+        onChange={(e) => setIsChecked(e.target.checked)}
+        variant="default"
+        size="lg"
+        color="#10b981" // A modern emerald green
+      />
+
+      <div className="mt-4 p-3 bg-slate-50 rounded-md border border-slate-200 text-sm">
+        <strong>Current State:</strong> {isChecked ? "✅ Checked" : "❌ Unchecked"}
+      </div>
+    </div>
+  );
+}
+    ```
+  </Tabs.Tab>
+  </Tabs>
+
+
+---
+## Props
+## Props
+
+| Prop        | Type | Default | Description |
+|------------|------|---------|-------------|
+| `label` | `string` | — | Text displayed next to the checkbox. |
+| `checked` | `boolean` | — | Controls whether the checkbox is checked (controlled component). |
+| `onChange` | `(event) => void` | — | Callback fired when the checked state changes. |
+| `size` | `"sm" \| "md" \| "lg"` | `"md"` | Controls the size of the checkbox. |
+| `variant` | `"default" \| "outline" \| "ghost"` | `"default"` | Visual style variant of the checkbox. |
+| `disabled` | `boolean` | `false` | Disables the checkbox when set to `true`. |
+| `error` | `boolean` | `false` | Displays error state styling when `true`. |
+| `color` | `string` | `"#2563eb"` | Accent color of the checkbox when checked. |
+| `className` | `string` | `""` | Additional CSS classes for custom styling. |
+| `...props` | `object` | — | Any extra props passed to the native checkbox input element. |
+
+
+
+---
+# Installation
+
+## NPM (Package Manager)
+    <Steps>
+      ### Step 1: Create a React App
+      Open your terminal and run the following command to create a new React app:
+      ```bash
+      npx create-react-app my-app
+      ``` 
+      ### Step 2: Navigate to Your Project Directory
+      After creating your project, navigate to your project directory:
+      ```bash
+      cd my-app
+      ``` 
+
+      ### Step 3: Install the Package
+      Run the following command in your project root to add the library as a dependency.
+      ```bash
+      npm install zure-ui
+      ```
+
+      ### Step 4: Start Building
+      You can now import any component directly into your React files.
+      ``` jsx Copy showLineNumbers filename="Checkbox.jsx"
+
+import {Checkbox} from "zure-ui";
+
+export default function App() {
+  
+  return (
+    <Checkbox defaultChecked variant="default" size="md" label="default" color="#000"  />
+    <Checkbox defaultChecked variant="outline" size="md" label="outline" color="#000" />
+    <Checkbox defaultChecked variant="ghost" size="md" label="ghost" color="#000" />
+  );
+}
+
+      ```
+    </Steps>
+  
+
+
+<h2 id="manual"></h2>
+## MANUAL METHOD
+  
+    <Steps>
+      ### Step 1: Create a Components Directory
+      Ensure you have a dedicated folder for UI components (e.g., `src/components/ui`).
+
+      ### Step 2: Create the Component Folder
+      For each component you want to use, create a new folder named after the component.
+      <FileTree>
+  <FileTree.Folder name="src" defaultOpen>
+    <FileTree.Folder name="components" defaultOpen>
+      <FileTree.Folder name="ui" defaultOpen>
+        <FileTree.Folder name="Checkbox
+" defaultOpen>
+          <FileTree.File name="Checkbox.jsx" />
+          <FileTree.File name="Checkbox.module.css" />
+          <FileTree.File name="index.js" />
+        </FileTree.Folder>
+      </FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.File name="App.js" />
+  </FileTree.Folder>
+</FileTree>
+
+### Step 3: Add the Three Core Files
+      Inside that new folder, create these three files and paste the code provided in the component's documentation:
+      1.  `Checkbox.jsx` (The Logic)
+      2.  `Checkbox.module.css` (The Styles)
+      3.  `index.js` (The Export)
+
+    ### Step 4: Paste in Checkbox.jsx
+
+    <Tabs items={['React JS', 'Next JS']}>
+
+<Tabs.Tab>
+``` jsx Copy showLineNumbers filename="Checkbox.jsx" 
+import React, { useId } from "react";
+import styles from "./checkbox.module.css";
+
+export const Checkbox = ({
+  label,
+  checked,
+  onChange,
+  size = "md",
+  variant = "default", // default | outline | ghost
+  disabled = false,
+  error = false,
+  color = "#000", 
+  className = "",
+  ...props
+}) => {
+  const id = useId();
+
+  return (
+    <div 
+      className={`${styles.container} ${className}`}
+      style={{ "--zure-color": color }}
+    >
+      <label className={`${styles.wrapper} ${disabled ? styles.disabled : ""}`}>
+        <div className={styles.inputWrapper}>
+          <input
+            id={id}
+            type="checkbox"
+            checked={checked}
+            onChange={onChange}
+            disabled={disabled}
+            className={styles.input}
+            {...props}
+          />
+          {/* The box that changes based on variant */}
+          <div className={`${styles.checkmark} ${styles[variant]} ${styles[size]} ${error ? styles.error : ""}`}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+        </div>
+        
+        {label && <span className={styles.label}>{label}</span>}
+      </label>
+    </div>
+  );
+};
+```
+</Tabs.Tab>
+  <Tabs.Tab>
+  ``` jsx Copy showLineNumbers filename="Checkbox.jsx"
+"use client";
+import React, { useId } from "react";
+import styles from "./checkbox.module.css";
+
+export const Checkbox = ({
+  label,
+  checked,
+  onChange,
+  size = "md",
+  variant = "default", // default | outline | ghost
+  disabled = false,
+  error = false,
+  color = "#2563eb", 
+  className = "",
+  ...props
+}) => {
+  const id = useId();
+
+  return (
+    <div 
+      className={`${styles.container} ${className}`}
+      style={{ "--zure-color": color }}
+    >
+      <label className={`${styles.wrapper} ${disabled ? styles.disabled : ""}`}>
+        <div className={styles.inputWrapper}>
+          <input
+            id={id}
+            type="checkbox"
+            checked={checked}
+            onChange={onChange}
+            disabled={disabled}
+            className={styles.input}
+            {...props}
+          />
+          {/* The box that changes based on variant */}
+          <div className={`${styles.checkmark} ${styles[variant]} ${styles[size]} ${error ? styles.error : ""}`}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+        </div>
+        
+        {label && <span className={styles.label}>{label}</span>}
+      </label>
+    </div>
+  );
+};
+
+    ```
+  </Tabs.Tab>
+  </Tabs>
+
+    
+
+    ### Step 5: Paste in input.module.css
+
+   ``` css Copy showLineNumbers filename="Input.module.css"
+   .container {
+  --zure-color: #2563eb; /* Fallback */
+  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hidden native input, but still focusable */
+.input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  z-index: 2;
+}
+
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d1d5db;
+  background-color: #fff;
+  border-radius: 6px;
+  transition: all var(--transition);
+  pointer-events: none; /* Let clicks pass through to the input */
+}
+
+.checkmark svg {
+  width: 75%;
+  height: 75%;
+  color: white;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* --- STATE LOGIC --- */
+
+/* 1. Default Variant Checked */
+.input:checked + .default {
+  background-color: var(--zure-color);
+  border-color: var(--zure-color);
+}
+
+/* 2. Outline Variant Checked */
+.input:checked + .outline {
+  border-color: var(--zure-color);
+  background-color: color-mix(in srgb, var(--zure-color), transparent 92%);
+}
+.input:checked + .outline svg {
+  color: var(--zure-color); /* Tick is colored instead of white */
+}
+
+/* 3. Ghost Variant Checked */
+.input:checked + .ghost {
+  background-color: color-mix(in srgb, var(--zure-color), transparent 85%);
+  border-color: transparent;
+}
+.input:checked + .ghost svg {
+  color: var(--zure-color);
+}
+
+/* Common "Show SVG" logic */
+.input:checked + .checkmark svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Accessibility Focus */
+.input:focus-visible + .checkmark {
+  outline: 2px solid var(--zure-color);
+  outline-offset: 2px;
+}
+
+/* --- SIZES --- */
+.sm { width: 16px; height: 16px; border-radius: 4px; }
+.md { width: 20px; height: 20px; }
+.lg { width: 24px; height: 24px; border-radius: 8px; }
+
+/* Error state */
+.checkmark.error {
+  border-color: #ef4444;
+}
+    ```
+    ### Step 6: Paste in index.js
+
+    ``` js Copy showLineNumbers filename="index.js"
+    export { Checkbox } from "./Checkbox";
+
+    ```
+
+      ### Step 7: Local Usage
+      Import the component using your local path:
+      ```jsx Copy showLineNumbers filename="Checkbox.jsx"
+      import { Checkbox } from './components/Checkbox';
+      ```
+  
+   ### Step 8:  Usage
+      Use the component
+      ```jsx showLineNumbers filename="Checkbox.jsx"
+ 
+import {Checkbox} from "zure-ui";
+ 
+export default function App() {
+ 
+return (
+<Checkbox defaultChecked variant="default" size="md" label="default" color="#000"  />
+<Checkbox defaultChecked variant="outline" size="md" label="outline" color="#000" />
+<Checkbox defaultChecked variant="ghost" size="md" label="ghost" color="#000" />
+);
+}
+ 
+      ```
+    </Steps>
+
+
+---

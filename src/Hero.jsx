@@ -4,7 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Copy, Check, Terminal } from "lucide-react"
 import Silk from "@/Components/Silk"
-import '../globals.css'
+import '../app/globals.css'
 import Link from "next/link";
 
 export default function Hero() {
@@ -42,15 +42,15 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen">
         <Silk 
           speed={8} 
-          scale={0.8} 
+          scale={1} 
           color="#7B7481" 
-          noiseIntensity={1.2} 
+          noiseIntensity={1.5} 
         />
       </div>
 
       {/* 2. ATMOSPHERIC OVERLAYS */}
-      <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_50%_-20%,#7B748120,transparent_40%)]" />
-      <div className="absolute inset-0 z-[1] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] brightness-100 contrast-150" />
+      <div className="absolute inset-0 z-[1] " />
+      <div className="absolute inset-0 z-[1]  brightness-100 contrast-150" />
 
       {/* 3. CONTENT */}
       <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6">
@@ -73,7 +73,7 @@ export default function Hero() {
             variants={item}
             className="text-6xl font-medium tracking-tighter text-white text sm:text-8xl lg:text-[10rem]"
           >
-            ZURE <span className="italic font font-light text-[#7B7481]">UI</span>
+            ZURE<span className="italic font font-light text-[#7B7481]">UI</span>
           </motion.h1>
           
           <motion.p 
