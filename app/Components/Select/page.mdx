@@ -180,11 +180,14 @@ export default function SelectDemo() {
 
 
 ---
-# Installation
+## Installation
 > You can `Integrate Zure UI`  By 2 ways `npm install zure-ui` Or by `Manually creating folder` , files & paste the given code It `Totally depends on your workflow`.
 
-## NPM (Package Manager)
-    <Steps>
+<Tabs items={['NPM', 'Manual']}>
+
+<Tabs.Tab>
+ # NPM
+ <Steps>
       ### Step 1: Create a React App
       Open your terminal and run the following command to create a new React app:
       ```bash
@@ -219,11 +222,11 @@ export default function SelectDemo() {
       ```
     </Steps>
   
+</Tabs.Tab>
 
-
-<h2 id="manual"></h2>
-## MANUAL METHOD
-  
+<Tabs.Tab>
+ # Manual
+ 
     <Steps>
       ### Step 1: Create a Components Directory
       Ensure you have a dedicated folder for UI components (e.g., `src/components/ui`).
@@ -506,6 +509,11 @@ export const Select = ({
   disabled>Disabled</Select>
       ```
     </Steps>
+
+</Tabs.Tab>
+
+</Tabs>
+ 
 
 
 ---
