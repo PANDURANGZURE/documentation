@@ -3,6 +3,7 @@ import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import { Head } from 'nextra/components'
 import './globals.css'
+import Logo from '@/Logo'
 
 export default async function RootLayout({ children }) {
   const pageMap = await getPageMap()
@@ -30,7 +31,7 @@ export default async function RootLayout({ children }) {
           pageMap={pageMap}
           navbar={
             <Navbar
-              logo={<b>Zure UI</b>}
+              logo={<Logo/>}
               projectLink="https://github.com/PANDURANGZURE/zure-ui"
             />
           }
