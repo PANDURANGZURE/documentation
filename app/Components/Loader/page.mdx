@@ -1,1 +1,381 @@
-#Loader
+import { Select } from '@/Components/ui/Select'
+import { Loader } from '@/Components/ui/Loaders'
+import SelectDemo  from '@/Demo/SelectDemo'
+import { ComponentWrapper } from '@/Components/ComponentWrapper'
+import { Steps, Tabs, FileTree } from 'nextra/components'
+
+# Loader
+
+Below is the full output of the Loader component across all variants and sizes.
+> "Its Important to install the packages & Dependencies to use can intall using `npm install zure-ui` and also paste code maunally `For both React & Next Js` "
+
+### 1. Variants
+These define the intent and visual weight of the Loader.
+
+<Tabs items={['Preview', 'Use']}>
+
+<Tabs.Tab>
+<ComponentWrapper>
+  <div style={{ display: 'flex', gap: '5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+<Loader/>
+<Loader variant="dots" />
+<Loader variant="bar" color="#000" />
+  </div>
+</ComponentWrapper>
+</Tabs.Tab>
+  <Tabs.Tab>
+  ``` jsx Copy showLineNumbers filename="Loader.jsx" 
+<Loader/>
+<Loader variant="dots" />
+<Loader variant="bar" color="#000" />
+    ```
+  </Tabs.Tab>
+  </Tabs>
+
+### 2. Sizes
+Selects can be scaled to fit different UI densities.
+
+<Tabs items={['Preview', 'Use']}>
+
+<Tabs.Tab>
+<ComponentWrapper>
+  <div style={{ display: 'flex', gap: '5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+<Loader size="sm" color="#000" />
+<Loader size="md" color="#000" />
+<Loader size="lg" color="#000" />
+  </div>
+</ComponentWrapper>
+</Tabs.Tab>
+  <Tabs.Tab>
+  ``` jsx Copy showLineNumbers filename="Loader.jsx"
+<Loader size="sm" color="#000" />
+<Loader size="md" color="#000" />
+<Loader size="lg" color="#000" />
+    ```
+  </Tabs.Tab>
+  </Tabs>
+
+
+---
+## Props
+| Prop Name | Type                           | Default     | Description                                                                                    |
+| --------- | ------------------------------ | ----------- | ---------------------------------------------------------------------------------------------- |
+| `size`    | `"sm" \| "md" \| "lg"`         | `"md"`      | Controls the loader size. Maps to pixel values (`sm = 16px`, `md = 24px`, `lg = 36px`).        |
+| `color`   | `string`                       | `"#000"`    | Sets the primary color of the loader (spinner top, dots, or bar). Accepts any valid CSS color. |
+| `variant` | `"spinner" \| "dots" \| "bar"` | `"spinner"` | Chooses the loader style: circular spinner, animated dots, or progress bar.                    |
+
+---
+## Installation
+> You can `Integrate Zure UI`  By 2 ways `npm install zure-ui` Or by `Manually creating folder` , files & paste the given code It `Totally depends on your workflow`.
+
+<Tabs items={['NPM', 'Manual']}>
+
+<Tabs.Tab>
+ # NPM
+ <Steps>
+      ### Step 1: Create a React App
+      Open your terminal and run the following command to create a new React app:
+      ```bash
+      npx create-react-app my-app
+      ``` 
+      ### Step 2: Navigate to Your Project Directory
+      After creating your project, navigate to your project directory:
+      ```bash
+      cd my-app
+      ``` 
+
+      ### Step 3: Install the Package
+      Run the following command in your project root to add the library as a dependency.
+      ```bash
+      npm install zure-ui
+      ```
+
+      ### Step 4: Start Building
+      You can now import any component directly into your React files.
+      ``` jsx Copy showLineNumbers filename="App.jsx"
+      import { Loader } from 'zure-ui';
+
+      function App() {
+        return 
+<Loader/>
+<Loader variant="dots" />
+<Loader variant="bar" color="#000" />
+        
+      }
+      ```
+    </Steps>
+  
+</Tabs.Tab>
+
+<Tabs.Tab>
+ # Manual
+ 
+    <Steps>
+      ### Step 1: Create a Components Directory
+      Ensure you have a dedicated folder for UI components (e.g., `src/components/ui`).
+
+      ### Step 2: Create the Component Folder
+      For each component you want to use, create a new folder named after the component.
+      <FileTree>
+  <FileTree.Folder name="src" defaultOpen>
+    <FileTree.Folder name="components" defaultOpen>
+      <FileTree.Folder name="ui" defaultOpen>
+        <FileTree.Folder name="Loader" defaultOpen>
+          <FileTree.File name="Loader.jsx" />
+          <FileTree.File name="Loader.module.css" />
+          <FileTree.File name="index.js" />
+        </FileTree.Folder>
+      </FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.File name="App.js" />
+  </FileTree.Folder>
+</FileTree>
+
+### Step 3: Add the Three Core Files
+      Inside that new folder, create these three files and paste the code provided in the component's documentation:
+      1.  `Loader.jsx` (The Logic)
+      2.  `loader.module.css` (The Styles)
+      3.  `index.js` (The Export)
+
+    ### Step 4: Paste in Loader.jsx
+
+    <Tabs items={['React JS', 'Next JS']}>
+
+<Tabs.Tab>
+``` jsx Copy showLineNumbers filename="Loader.jsx" 
+import "./loader.css";
+
+const SIZE_MAP = {
+  sm: 16,
+  md: 24,
+  lg: 36,
+};
+
+export function Loader({
+  size = "md",
+  color = "#000",
+  variant = "spinner",
+}) {
+  const px = SIZE_MAP[size] || SIZE_MAP.md;
+
+  if (variant === "dots") {
+    return <DotsLoader size={px} color={color} />;
+  }
+
+  if (variant === "bar") {
+    return <BarLoader color={color} />;
+  }
+
+  return <Spinner size={px} color={color} />;
+}
+
+function Spinner({ size, color }) {
+  return (
+    <div
+      aria-label="Loading"
+      style={{
+        width: size,
+        height: size,
+        border: `${size / 8}px solid #e5e7eb`,
+        borderTop: `${size / 8}px solid ${color}`,
+        borderRadius: "50%",
+        animation: "spin 1s linear infinite",
+      }}
+    />
+  );
+}
+
+function DotsLoader({ size, color }) {
+  return (
+    <div style={{ display: "flex", gap: size / 4 }}>
+      {[0, 1, 2].map((i) => (
+        <span
+          key={i}
+          style={{
+            width: size / 4,
+            height: size / 4,
+            background: color,
+            borderRadius: "50%",
+            animation: "pulse 1.2s ease-in-out infinite",
+            animationDelay: `${i * 0.2}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function BarLoader({ color }) {
+  return (
+    <div
+      style={{
+        width: 120,
+        height: 4,
+        background: "#e5e7eb",
+        overflow: "hidden",
+        borderRadius: 4,
+      }}
+    >
+      <div
+        style={{
+          width: "40%",
+          height: "100%",
+          background: color,
+          animation: "slide 1s infinite",
+        }}
+      />
+    </div>
+  );
+}
+```
+</Tabs.Tab>
+  <Tabs.Tab>
+  ``` jsx Copy showLineNumbers filename="Select.jsx"
+    "use client"; // Required for Next.js App Router
+import "./loader.css";
+
+const SIZE_MAP = {
+  sm: 16,
+  md: 24,
+  lg: 36,
+};
+
+export function Loader({
+  size = "md",
+  color = "#000",
+  variant = "spinner",
+}) {
+  const px = SIZE_MAP[size] || SIZE_MAP.md;
+
+  if (variant === "dots") {
+    return <DotsLoader size={px} color={color} />;
+  }
+
+  if (variant === "bar") {
+    return <BarLoader color={color} />;
+  }
+
+  return <Spinner size={px} color={color} />;
+}
+
+function Spinner({ size, color }) {
+  return (
+    <div
+      aria-label="Loading"
+      style={{
+        width: size,
+        height: size,
+        border: `${size / 8}px solid #e5e7eb`,
+        borderTop: `${size / 8}px solid ${color}`,
+        borderRadius: "50%",
+        animation: "spin 1s linear infinite",
+      }}
+    />
+  );
+}
+
+function DotsLoader({ size, color }) {
+  return (
+    <div style={{ display: "flex", gap: size / 4 }}>
+      {[0, 1, 2].map((i) => (
+        <span
+          key={i}
+          style={{
+            width: size / 4,
+            height: size / 4,
+            background: color,
+            borderRadius: "50%",
+            animation: "pulse 1.2s ease-in-out infinite",
+            animationDelay: `${i * 0.2}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function BarLoader({ color }) {
+  return (
+    <div
+      style={{
+        width: 120,
+        height: 4,
+        background: "#e5e7eb",
+        overflow: "hidden",
+        borderRadius: 4,
+      }}
+    >
+      <div
+        style={{
+          width: "40%",
+          height: "100%",
+          background: color,
+          animation: "slide 1s infinite",
+        }}
+      />
+    </div>
+  );
+}
+
+    ```
+  </Tabs.Tab>
+  </Tabs>
+
+    
+
+    ### Step 5: Paste in loader.module.css
+
+   ``` css Copy showLineNumbers filename="loader.module.css"
+   @keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 80%, 100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+  ```
+    ### Step 6: Paste in index.js
+
+    ``` js Copy showLineNumbers filename="index.js"
+    export { Loader } from "./Loaders";
+
+    ```
+
+      ### Step 7: Local Usage
+      Import the component using your local path:
+      ```jsx Copy showLineNumbers filename="App.jsx"
+      import { Loader } from './components/ui/Loader';
+      ```
+  
+   ### Step 8:  Usage
+      Use the component
+      ```jsx showLineNumbers filename="App.jsx"
+<Loader/>
+<Loader variant="dots" />
+<Loader variant="bar" color="#000" />
+      ```
+    </Steps>
+
+</Tabs.Tab>
+
+</Tabs>
+ 
+
+
+---
