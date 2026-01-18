@@ -36,7 +36,7 @@ export default function page() {
     <>
     <Cursor/>
     <Hero/>
-    <div className=''>
+    <div className='font'>
      <div className="min-h-screen bg-[#050505] p-8 flex items-center justify-center">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl w-full">
         {cards.map((card, index) => (
