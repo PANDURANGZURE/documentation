@@ -2,61 +2,71 @@ export default {
   Button:{
     title : "Button",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   Input:{
     title : "Input",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   Select:{
     title : "Select",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   Checkbox:{
     title : "Checkbox",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   Textarea:{
     title : "Textarea",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   ToastMessage:{
     title : "Toast Message",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   Loader:{
     title : "Loader",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   Skeletons:{
     title : "Skeleton",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   Navbar:{
     title : "Navbar",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
   Switch:{
     title : "Switch",
     theme: {
-      collapsed: false // Indicates whether the item in sidebar is collapsed by default
+      collapsed: false,
+      copyPage: false
     }
   },
 }
