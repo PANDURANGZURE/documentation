@@ -1,0 +1,92 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  --zure-color: #22c55e;
+}
+
+.wrapper input {
+  display: none;
+}
+
+/* Track */
+.track {
+  position: relative;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition: background 0.25s ease;
+}
+
+/* Thumb */
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+/* Checked */
+.wrapper input:checked + .track {
+  background: var(--zure-color);
+}
+
+.wrapper input:checked + .track .thumb {
+  transform: translateX(100%);
+}
+
+/* Sizes */
+.sm {
+  width: 32px;
+  height: 18px;
+}
+.sm .thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.md {
+  width: 40px;
+  height: 22px;
+}
+.md .thumb {
+  width: 18px;
+  height: 18px;
+}
+
+.lg {
+  width: 48px;
+  height: 26px;
+}
+.lg .thumb {
+  width: 22px;
+  height: 22px;
+}
+
+/* Variants */
+.solid {
+  border: none;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid #d1d5db;
+}
+
+.wrapper input:checked + .outline {
+  border-color: var(--zure-color);
+  background: transparent;
+}
+
+/* Disabled */
+.wrapper input:disabled + .track {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Label */
+.label {
+  font-size: 0.9rem;
+}
